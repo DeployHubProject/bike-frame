@@ -35,7 +35,7 @@ app.config.from_object(__name__)
 CORS(app)
 
 db = None
-dburl = 'mongodb://' + os.getenv('BIKE_DB_SERVICE_HOST','docker.for.mac.localhost') + ':27017'
+dburl = 'mongodb://mongo-0.mongo:27017'
 try:
     client = MongoClient(dburl)
     pprint.pprint(client.server_info())
