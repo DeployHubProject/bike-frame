@@ -28,13 +28,15 @@ from pymongo import MongoClient, errors
 from bson.objectid import ObjectId
 from flask_cors import CORS
 
+
 app = Flask(__name__)
 app.config.from_object(__name__)
 CORS(app)
 
 db = None
+
 try:
-    client = MongoClient('mongodb://docker.for.mac.localhost:27017')
+    client = MongoClient('mongodb://mongo-0.mongo:27017')
     pprint.pprint(client.server_info())
     db = client.test
 except errors.ConnectionFailure as e:
