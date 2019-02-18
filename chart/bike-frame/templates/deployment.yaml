@@ -8,7 +8,7 @@ spec:
     metadata:
       labels:
         app: {{ include "bike-frame.name" . }}
-        version: {{ include "bike-frame.name" . }}-{{ .Values.image.version }}
+        version: {{ .Values.image.version }}
         dockersha: {{ .Values.DockerSha }}
         gitcommit: {{ .Values.GitCommit }}
     spec:
