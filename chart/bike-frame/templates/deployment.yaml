@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: {{ include "bike-frame.name" . }}
+  name: {{ include "bike-frame.name" . }}-{{ .Values.image.version }}
 spec:
   replicas: {{ .Values.replicaCount }}
   template:
